@@ -3,11 +3,11 @@ import {TestActions,checkAddressActions} from './checkAddress.actions'
 // export const pageListNode = 'pageList'
 export const checkAddressNode = 'checkAddress'
 
-export interface checkAddressState {
+export interface CheckAddressState {
   count: any
 }
 
-const initialState:checkAddressState ={
+const initialState:CheckAddressState ={
   count:0
 }
 

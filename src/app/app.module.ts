@@ -9,18 +9,31 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CheckAddressTabComponent } from './check-address-tab/check-address-tab.component';
-
+import {metaReducers, reducers} from './ngrx/index';
+import { HttpClientModule } from '@angular/common/http';
+import { AddressTableComponent } from './address-table/address-table.component';
+import { AddresFormComponent } from './addres-form/addres-form.component';
+import {AddressTableEffects} from './app.effects'
 @NgModule({
   declarations: [
     AppComponent,
-    CheckAddressTabComponent
+    CheckAddressTabComponent,
+    AddressTableComponent,
+    AddresFormComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AddressTableEffects]),
     StoreRouterConnectingModule.forRoot()
   ],
   providers: [],

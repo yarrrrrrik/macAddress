@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs'
 import {select,Store} from '@ngrx/store'
 import {map,mergeMap,tap} from 'rxjs/operators'
-import {checkAddressNode,checkAddressState,checkAddressReducer} from '../ngrx/check-address-tab/checkAddress.reducers'
+import {checkAddressNode,CheckAddressState,checkAddressReducer} from '../ngrx/check-address-tab/checkAddress.reducer'
 import {selectTest} from '../ngrx/check-address-tab/checkAddress.selectors'
 import {Init} from '../ngrx/check-address-tab/checkAddress.actions'
 
@@ -13,18 +13,20 @@ import {Init} from '../ngrx/check-address-tab/checkAddress.actions'
 })
 export class CheckAddressTabComponent implements OnInit {
 
-  public state1:any = 5444
-  public state$:Observable<any> = this.store.pipe(select(selectTest)).subscribe(data => {console.log('yes')})
+  public state$:Observable<any> = this.store.pipe(select(selectTest))
 
   constructor(
-    public store:Store<checkAddressState>
+    public store:Store<CheckAddressState>
   ) { }
-
-  count = 5444
 
   ngOnInit(): void {
     this.store.dispatch(new Init())
+    console.log('yes');
   }
 
+  showState(){
+    console.log(this.state$);
+
+  }
 
 }

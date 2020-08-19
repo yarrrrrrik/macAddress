@@ -1,9 +1,9 @@
 import {createFeatureSelector,createSelector} from '@ngrx/store'
-import {checkAddressNode,checkAddressState} from './checkAddress.reducers'
+import {checkAddressNode,CheckAddressState} from './checkAddress.reducer'
 
-export const selectTestFeature = createFeatureSelector<checkAddressState>(checkAddressNode)
+export const selectTestFeature = createFeatureSelector<CheckAddressState>(checkAddressNode)
 
 export const selectTest = createSelector(
   selectTestFeature,
-  (state:checkAddressState):any => state.count
+  (state:CheckAddressState):any => state.count
 )

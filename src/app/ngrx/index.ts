@@ -6,14 +6,18 @@ import{
   MetaReducer
 } from '@ngrx/store'
 import {environment} from '../../environments/environment'
-import {checkAddressNode,checkAddressState,checkAddressReducer} from './check-address-tab/checkAddres.reducer'
+import {checkAddressNode,CheckAddressState,checkAddressReducer} from './check-address-tab/checkAddress.reducer'
+import {addressTableNode,AddressTableState,addressTableReducer} from './address-table/addressTable.reducer'
+
 
 export interface State{
-  [checkAddressNode]:checkAddressState
+  [checkAddressNode]:CheckAddressState;
+  [addressTableNode]:AddressTableState
 }
 
 export const reducers: ActionReducerMap<State> = {
-  [checkAddressNode]:checkAddressReducer
+  [checkAddressNode]:checkAddressReducer,
+  [addressTableNode]:addressTableReducer
 }
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : []
