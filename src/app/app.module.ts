@@ -13,13 +13,17 @@ import {metaReducers, reducers} from './ngrx/index';
 import { HttpClientModule } from '@angular/common/http';
 import { AddressTableComponent } from './address-table/address-table.component';
 import { AddresFormComponent } from './addres-form/addres-form.component';
-import {AddressTableEffects} from './app.effects'
+import {AddressTableEffects} from './app.effects';
+import { AddressStoryComponent } from './address-story/address-story.component';
+import { StoryTabComponent } from './story-tab/story-tab.component'
 @NgModule({
   declarations: [
     AppComponent,
     CheckAddressTabComponent,
     AddressTableComponent,
-    AddresFormComponent
+    AddresFormComponent,
+    AddressStoryComponent,
+    StoryTabComponent
   ],
   imports: [
     HttpClientModule,

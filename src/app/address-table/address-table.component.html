@@ -2,37 +2,39 @@
 <div class="address-table">
   <h2 class="address-table__title">44:38:39:ff:ef:57 MAC address details</h2>
   <div class="mac-address-details">
-    <button type="button" name="button" (click)='show()'>SHOW</button>
+    <!-- <button type="button" name="button" (click)='show()'>SHOW</button> -->
 
-    <h1>{{state$.details.vendorDetails.companyName | async}}</h1>
+    <!-- <h1 *ngIf="details">{{companyName }}</h1> -->
 
     <h3>Vendor details</h3>
     <ul>
-      <li class="detail"><p>OUI</p><span>44:38:39</span></li>
-      <li class="detail"><p>is private</p><span>False</span></li>
-      <li class="detail"><p>Company name</p><span>Cumulus network</span></li>
-      <li class="detail"><p>Company addres</p><span>650 Castro Street, suite 120-245 Mountain View CA 94041 US</span></li>
-      <li class="detail"><p>Country code</p><span>US</span></li>
+      <li class="detail"><p>OUI</p><span>{{details.vendorDetails.oui}}</span></li>
+      <li class="detail"><p>is private</p><span>{{details.vendorDetails.isPrivate}}</span></li>
+      <li class="detail"><p>Company name</p><span>{{details.vendorDetails.companyName}}</span></li>
+      <li class="detail"><p>Company addres</p><span>{{details.vendorDetails.companyAddress}}</span></li>
+      <li class="detail"><p>Country code</p><span>{{details.vendorDetails.countryCode}}</span></li>
     </ul>
   </div>
   <div class="mac-address-details">
-    <h3>Vendor details</h3>
+    <h3>Block details</h3>
     <ul>
-      <li class="detail"><p>OUI</p><span>44:38:39</span></li>
-      <li class="detail"><p>is private</p><span>False</span></li>
-      <li class="detail"><p>Company name</p><span>Cumulus network</span></li>
-      <li class="detail"><p>Company addres</p><span>650 Castro Street, suite 120-245 Mountain View CA 94041 US</span></li>
-      <li class="detail"><p>Country code</p><span>US</span></li>
+      <li class="detail"><p>Is registered</p><span>{{details.blockDetails.blockFound}}</span></li>
+      <li class="detail"><p>Border left</p><span>{{details.blockDetails.borderLeft}}</span></li>
+      <li class="detail"><p>Border right</p><span>{{details.blockDetails.borderRight}}</span></li>
+      <li class="detail"><p>Block size</p><span>{{details.blockDetails.blockSize}}</span></li>
+      <li class="detail"><p>Assignment block size</p><span>{{details.blockDetails.assignmentBlockSize}}</span></li>
     </ul>
   </div>
   <div class="mac-address-details">
-    <h3>Vendor details</h3>
+    <h3>MAC address details</h3>
     <ul>
-      <li class="detail"><p>OUI</p><span>44:38:39</span></li>
-      <li class="detail"><p>is private</p><span>False</span></li>
-      <li class="detail"><p>Company name</p><span>Cumulus network</span></li>
-      <li class="detail"><p>Company addres</p><span>650 Castro Street, suite 120-245 Mountain View CA 94041 US</span></li>
-      <li class="detail"><p>Country code</p><span>US</span></li>
+      <li class="detail"><p>Is valid</p><span>{{details.macAddressDetails.isValid}}</span></li>
+      <li class="detail"><p>Virtual Machine</p><span>{{details.macAddressDetails.virtualMachine}}</span></li>
+      <li class="detail"><p>Transmission type</p><span>{{details.macAddressDetails.transmissionType}}</span></li>
+      <li class="detail"><p>Administration type</p><span>{{details.macAddressDetails.administrationType}}</span></li>
+      <li class="detail"><p>Applications</p><span>{{details.macAddressDetails.applications[0]}}</span></li>
+      <li class="detail"><p>Wireshark notes</p><span>{{details.macAddressDetails.wiresharkNotes}}</span></li>
+
     </ul>
   </div>
 </div>

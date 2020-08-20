@@ -18,9 +18,9 @@ import {GetDetails} from '../ngrx/address-table/addressTable.actions'
   styleUrls: ['./address-table.component.scss']
 })
 export class AddressTableComponent implements OnInit {
-  public details = {}
+  public details:any = false
 
-  public state$ = this.store$.pipe(select(selectAddressTableFeature))
+  public state$ = this.store$.pipe(select(selectAddressTableFeature)).subscribe(data => this.details = data.details)
 
   constructor(
     public store$:Store<AddressTableState>
@@ -31,6 +31,6 @@ export class AddressTableComponent implements OnInit {
   }
 
   show(){
-    console.log(this.state$)
+    console.log(this.details)
   }
 }
