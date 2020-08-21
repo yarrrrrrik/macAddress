@@ -9,9 +9,5 @@ export class AddDetails implements Action{
   constructor(public addressDetails){}
 }
 
-// export class PushDetails implements Action{
-//   readonly type = addressTableActionsType.pushDetails
-//   constructor(public details){}
-// }
 
 export type AddressStoryActions = AddDetails

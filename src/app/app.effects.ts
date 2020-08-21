@@ -14,7 +14,6 @@ export class AddressTableEffects {
     ofType(addressTableActionsType.getDetails),
     switchMap((action) => this.service.getAddressDetails(action.address).pipe(
         map(details => new PushDetails(details)),
-       // catchError(() => EMPTY)
       )
       )
     )
@@ -23,15 +22,8 @@ export class AddressTableEffects {
   addAddressDetails$ = createEffect(() => this.actions$.pipe(
     ofType(addressTableActionsType.pushDetails),
         map(details => new AddDetails(details)),
-       // catchError(() => EMPTY)
     )
   );
-  // effectName$ = createEffect(
-  //   () => this.actions$.pipe(
-  //     ofType(FeatureActions.actionOne),
-  //     map(() => FeatureActions.actionTwo())
-  //   )
-  // );
 
   constructor(
     private actions$: Actions,

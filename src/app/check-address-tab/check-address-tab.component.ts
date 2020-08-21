@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs'
 import {select,Store} from '@ngrx/store'
-import {map,mergeMap,tap} from 'rxjs/operators'
-import {checkAddressNode,CheckAddressState,checkAddressReducer} from '../ngrx/check-address-tab/checkAddress.reducer'
+import {CheckAddressState} from '../ngrx/check-address-tab/checkAddress.reducer'
 import {selectTest} from '../ngrx/check-address-tab/checkAddress.selectors'
 import {Init} from '../ngrx/check-address-tab/checkAddress.actions'
 
@@ -22,7 +21,5 @@ export class CheckAddressTabComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showState(){
-  }
 
 }

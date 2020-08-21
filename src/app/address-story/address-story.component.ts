@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {select,Store} from '@ngrx/store'
 import {selectAddressStoryFeature} from '../ngrx/address-story/addressStory.selectors'
-import {addressStoryNode,AddressStoryState,addressStoryReducer} from '../ngrx/address-story/addressStory.reducer'
+import {AddressStoryState} from '../ngrx/address-story/addressStory.reducer'
 
 @Component({
   selector: 'app-address-story',
@@ -19,8 +19,5 @@ export class AddressStoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  show(){
-    console.log(this.addresses[0].details)
 
-  }
 }

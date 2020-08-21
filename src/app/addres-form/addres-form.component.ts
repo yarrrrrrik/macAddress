@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs'
 import {select,Store} from '@ngrx/store'
 
-
-import {addressTableService} from '../services/address-table.service'
-import {addressTableNode,AddressTableState,addressTableReducer} from '../ngrx/address-table/addressTable.reducer'
+import {AddressTableState} from '../ngrx/address-table/addressTable.reducer'
 import {selectAddressTableFeature} from '../ngrx/address-table/addressTable.selectors'
 import {GetDetails} from '../ngrx/address-table/addressTable.actions'
 
@@ -24,8 +22,6 @@ export class AddresFormComponent implements OnInit {
 
   getDetails(){
       this.store$.dispatch(new GetDetails(this.address))
-      // console.log(this.address);
-
   }
   ngOnInit(): void {
   }

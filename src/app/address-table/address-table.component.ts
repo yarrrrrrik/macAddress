@@ -1,10 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Observable} from 'rxjs'
 import {select,Store} from '@ngrx/store'
-import {map,mergeMap,tap} from 'rxjs/operators'
 
 import {addressTableService} from '../services/address-table.service'
-import {addressTableNode,AddressTableState,addressTableReducer} from '../ngrx/address-table/addressTable.reducer'
+import {AddressTableState} from '../ngrx/address-table/addressTable.reducer'
 import {selectAddressTableFeature} from '../ngrx/address-table/addressTable.selectors'
 import {GetDetails} from '../ngrx/address-table/addressTable.actions'
 

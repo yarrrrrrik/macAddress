@@ -2,10 +2,6 @@
 <div class="address-table" *ngIf="this.details">
   <h2 class="address-table__title">{{details.macAddressDetails.searchTerm}} MAC address details</h2>
   <div class="mac-address-details">
-    <button type="button" name="button" (click)='get()'>SHOW</button>
-
-    <!-- <h1 *ngIf="details">{{companyName }}</h1> -->
-
     <h3>Vendor details</h3>
     <ul>
       <li class="detail"><p>OUI</p><span>{{details.vendorDetails.oui}}</span></li>

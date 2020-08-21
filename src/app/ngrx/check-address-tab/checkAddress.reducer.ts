@@ -1,6 +1,5 @@
 import {TestActions,checkAddressActions} from './checkAddress.actions'
 
-// export const pageListNode = 'pageList'
 export const checkAddressNode = 'checkAddress'
 
 export interface CheckAddressState {

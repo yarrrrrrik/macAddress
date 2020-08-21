@@ -1,19 +1,29 @@
 .address-table{
-  width: 100%;
+  width: 80%;
   height: 400px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 .address-table__title{
   width: 100%;
+  border-bottom: 2px solid rgb(209, 209, 209);
 }
 .mac-address-details{
-  width: 30%;
-  li{
+  width: 32%;
+  h3{
+    width: 100%;
+    text-align: center;
+  }
+  .detail{
     display: flex;
-    justify-content: space-around;
-    border: 1px solid black;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(205, 205, 205);
     align-items: center;
+    span{
+      max-width: 50%;
+    }
   }
 }

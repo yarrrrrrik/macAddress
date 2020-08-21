@@ -21,7 +21,6 @@ import { AddressStoryComponent } from './address-story/address-story.component';
 import { StoryTabComponent } from './story-tab/story-tab.component'
 
 const appRoutes: Routes =[
-    // { path: '', component: HomeComponent},
     { path: '', component: CheckAddressTabComponent},
     { path: 'storyTab', component: StoryTabComponent }
 ];

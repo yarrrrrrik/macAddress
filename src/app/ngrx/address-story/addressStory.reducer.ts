@@ -1,6 +1,5 @@
 import {addressStoryActionsType,AddressStoryActions} from './addressStory.actions'
 
-// export const pageListNode = 'pageList'
 export const addressStoryNode = 'addressStory'
 
 export interface AddressStoryState {

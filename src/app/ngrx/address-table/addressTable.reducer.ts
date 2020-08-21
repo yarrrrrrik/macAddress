@@ -1,6 +1,5 @@
 import {addressTableActionsType,AddressTableActions} from './addressTable.actions'
 
-// export const pageListNode = 'pageList'
 export const addressTableNode = 'addressTable'
 
 export interface AddressTableState {
