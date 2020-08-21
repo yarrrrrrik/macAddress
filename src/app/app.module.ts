@@ -8,14 +8,24 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { CheckAddressTabComponent } from './check-address-tab/check-address-tab.component';
-import {metaReducers, reducers} from './ngrx/index';
 import { HttpClientModule } from '@angular/common/http';
+import {metaReducers, reducers} from './ngrx/index';
+import {Routes, RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+
+import { CheckAddressTabComponent } from './check-address-tab/check-address-tab.component';
 import { AddressTableComponent } from './address-table/address-table.component';
 import { AddresFormComponent } from './addres-form/addres-form.component';
 import {AddressTableEffects} from './app.effects';
 import { AddressStoryComponent } from './address-story/address-story.component';
 import { StoryTabComponent } from './story-tab/story-tab.component'
+
+const appRoutes: Routes =[
+    // { path: '', component: HomeComponent},
+    { path: '', component: CheckAddressTabComponent},
+    { path: 'storyTab', component: StoryTabComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +36,7 @@ import { StoryTabComponent } from './story-tab/story-tab.component'
     StoryTabComponent
   ],
   imports: [
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
@@ -38,7 +49,8 @@ import { StoryTabComponent } from './story-tab/story-tab.component'
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AddressTableEffects]),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

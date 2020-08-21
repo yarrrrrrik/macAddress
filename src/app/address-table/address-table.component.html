@@ -1,8 +1,8 @@
 
-<div class="address-table">
-  <h2 class="address-table__title">44:38:39:ff:ef:57 MAC address details</h2>
+<div class="address-table" *ngIf="this.details">
+  <h2 class="address-table__title">{{details.macAddressDetails.searchTerm}} MAC address details</h2>
   <div class="mac-address-details">
-    <!-- <button type="button" name="button" (click)='show()'>SHOW</button> -->
+    <button type="button" name="button" (click)='get()'>SHOW</button>
 
     <!-- <h1 *ngIf="details">{{companyName }}</h1> -->
 
@@ -34,7 +34,6 @@
       <li class="detail"><p>Administration type</p><span>{{details.macAddressDetails.administrationType}}</span></li>
       <li class="detail"><p>Applications</p><span>{{details.macAddressDetails.applications[0]}}</span></li>
       <li class="detail"><p>Wireshark notes</p><span>{{details.macAddressDetails.wiresharkNotes}}</span></li>
-
     </ul>
   </div>
 </div>

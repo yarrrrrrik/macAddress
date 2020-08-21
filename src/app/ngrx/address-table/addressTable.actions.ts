@@ -7,6 +7,7 @@ export enum addressTableActionsType{
 
 export class GetDetails implements Action{
   readonly type = addressTableActionsType.getDetails
+  constructor(public address){}
 }
 
 export class PushDetails implements Action{

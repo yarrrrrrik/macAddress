@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {select,Store} from '@ngrx/store'
+import {selectAddressStoryFeature} from '../ngrx/address-story/addressStory.selectors'
+import {addressStoryNode,AddressStoryState,addressStoryReducer} from '../ngrx/address-story/addressStory.reducer'
 
 @Component({
   selector: 'app-address-story',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./address-story.component.scss']
 })
 export class AddressStoryComponent implements OnInit {
+  public addresses:any = false
 
-  constructor() { }
+  public state$ = this.store$.pipe(select(selectAddressStoryFeature)).subscribe(data => this.addresses = data.checkedAddresses)// тут можно поработать с датой
+
+  constructor(
+    public store$:Store<AddressStoryState>
+  ) { }
 
   ngOnInit(): void {
   }
+  show(){
+    console.log(this.addresses[0].details)
 
+  }
 }

@@ -8,7 +8,7 @@ export interface AddressTableState {
 }
 
 const initialState:AddressTableState ={
-  details:{}
+  details:false
 }
 
 export const addressTableReducer = (state = initialState,action:AddressTableActions) => {
@@ -18,5 +18,4 @@ export const addressTableReducer = (state = initialState,action:AddressTableActi
     default:
       return state
   }
-
 }

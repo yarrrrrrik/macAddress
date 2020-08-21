@@ -9,8 +9,8 @@ export class addressTableService {
 
   constructor(private http: HttpClient) {}
 
-  getAddressDetails(): Observable<any> {
-    return this.http.get<any>('https://api.macaddress.io/v1?apiKey=at_BULmXFODqtiqHIVJ6CERtQ11sBwzn&output=json&search=44:38:39:ff:ef:57')
+  getAddressDetails(address:any): Observable<any> {
+    return this.http.get<any>(`https://api.macaddress.io/v1?apiKey=at_BULmXFODqtiqHIVJ6CERtQ11sBwzn&output=json&search=${address}`)
   }
 
 

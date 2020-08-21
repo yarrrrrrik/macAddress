@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Observable} from 'rxjs'
 import {select,Store} from '@ngrx/store'
 import {map,mergeMap,tap} from 'rxjs/operators'
@@ -8,9 +8,6 @@ import {addressTableNode,AddressTableState,addressTableReducer} from '../ngrx/ad
 import {selectAddressTableFeature} from '../ngrx/address-table/addressTable.selectors'
 import {GetDetails} from '../ngrx/address-table/addressTable.actions'
 
-// import {checkAddressNode,CheckAddressState,checkAddressReducer} from '../ngrx/check-address-tab/checkAddress.reducer'
-// import {selectTest} from '../ngrx/check-address-tab/checkAddress.selectors'
-// import {Init} from '../ngrx/check-address-tab/checkAddress.actions'
 
 @Component({
   selector: 'app-address-table',
@@ -18,19 +15,23 @@ import {GetDetails} from '../ngrx/address-table/addressTable.actions'
   styleUrls: ['./address-table.component.scss']
 })
 export class AddressTableComponent implements OnInit {
-  public details:any = false
+  @Input() useDispatch:any
+  @Input() address:any
 
-  public state$ = this.store$.pipe(select(selectAddressTableFeature)).subscribe(data => this.details = data.details)
+  public details:any = false
+  public state$:any = 0
 
   constructor(
     public store$:Store<AddressTableState>
   ) { }
 
   ngOnInit(): void {
-    this.store$.dispatch(new GetDetails())
+    if(!this.address){
+      this.state$ = this.store$.pipe(select(selectAddressTableFeature)).subscribe(data => this.details = data.details)// тут можно поработать с датой
+    }else{
+      this.details = this.address
+    }
   }
 
-  show(){
-    console.log(this.details)
-  }
+
 }

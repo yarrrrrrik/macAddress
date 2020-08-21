@@ -20,13 +20,9 @@ export class CheckAddressTabComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new Init())
-    console.log('yes');
   }
 
   showState(){
-    console.log(this.state$);
-
   }
 
 }
