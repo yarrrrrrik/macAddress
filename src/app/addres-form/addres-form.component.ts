@@ -23,6 +23,7 @@ export class AddresFormComponent implements OnInit {
   getDetails(){
       this.store$.dispatch(new GetDetails(this.address))
   }
+  
   ngOnInit(): void {
   }
 

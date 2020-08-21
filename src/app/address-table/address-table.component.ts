@@ -14,11 +14,11 @@ import {GetDetails} from '../ngrx/address-table/addressTable.actions'
   styleUrls: ['./address-table.component.scss']
 })
 export class AddressTableComponent implements OnInit {
-  @Input() useDispatch:any
-  @Input() address:any
+  @Input() useDispatch
+  @Input() address
 
-  public details:any = false
-  public state$:any = 0
+  public details = false
+  public state$ = 0
 
   constructor(
     public store$:Store<AddressTableState>
